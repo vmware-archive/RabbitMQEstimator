@@ -1,0 +1,96 @@
+
+buildscript {
+    ext {
+        springBootVersion = '1.2.0.RELEASE'
+    }
+  repositories {
+   maven {
+        url "http://dist.gemstone.com/maven/release"
+      }
+    }
+    repositories {
+        mavenCentral()
+        
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot' 
+
+jar {
+    baseName = 'RabbitMQ'
+    version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+task sourceJar(type: Jar) {
+  from sourceSets.main.allJava
+}
+
+
+buildscript {
+  repositories{
+    jcenter()
+  }
+ repositories {
+   maven {
+        url "http://dist.gemstone.com/maven/release"
+      }
+    }
+  dependencies {
+    classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.0.1"
+  }
+}
+
+def thejarFile={
+"${project.libsDir}/${project.name}-${project.version}.jar"
+}
+
+repositories {
+   maven {
+        url "http://dist.gemstone.com/maven/release"
+      }
+   maven {
+        url "http://repo.springsource.org/libs-release/"
+        }
+    }
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-amqp")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-ws")
+    compile("org.springframework.boot:spring-boot-starter-jdbc")
+    compile("org.springframework.boot:spring-boot-starter-groovy-templates")
+    compile("org.springframework.boot:spring-boot-starter-data-rest")
+    compile("org.springframework.boot:spring-boot-starter-websocket")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.data:spring-data-rest-webmvc")
+    compile("com.google.code.gson:gson:2.3.1");
+    compile("com.sun.jersey:jersey-client:1.9.1");
+    compile("commons-codec:commons-codec:1.10")
+    compile("com.gemstone.gemfire:gemfire:8.1.0")
+    compile('org.springframework.data:spring-data-gemfire:1.5.2.RELEASE')
+    runtime("org.hsqldb:hsqldb")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+
+eclipse {
+    classpath {
+         containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+         containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7'
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.12'
+}
