@@ -16,14 +16,24 @@ import com.google.common.base.Optional;
 
 
 public class ExchangeOperations extends BaseFluent {
-	
+	/**
+	 * Constructor
+	 * @param http
+	 * @param mgmtService
+	 */
 	public ExchangeOperations(HttpContext http,
 			RabbitNodeMgmtService mgmtService) {
 		super(http, mgmtService);
 	}
 
 	private static final Logger logger = LoggerFactory.getLogger(ExchangeOperations.class);
-
+/**
+ * Get the mgmtSerice 
+ * @return
+ */
+	public RabbitNodeMgmtService and() {
+		return this.getMgmtService();
+	}
 	
 	/**
 	 * Get all exchanges on the broker (in the cluster) regardless

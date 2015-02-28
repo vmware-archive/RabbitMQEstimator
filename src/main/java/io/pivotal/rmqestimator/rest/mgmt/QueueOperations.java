@@ -21,6 +21,10 @@ public class QueueOperations extends BaseFluent {
 	}
 	private static final Logger logger = LoggerFactory.getLogger(QueueOperations.class);
 	
+	public RabbitNodeMgmtService and() {
+		return this.getMgmtService();
+	}
+	
 	/**
 	 * Get all queues, regardless of what virtual host it is on.
 	 * @return Collection of Queues

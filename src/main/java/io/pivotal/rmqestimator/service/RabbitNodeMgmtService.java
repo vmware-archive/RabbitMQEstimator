@@ -31,8 +31,16 @@ public class RabbitNodeMgmtService {
 	private int port;
 	private HttpContext httpContext;
 	
+	public RabbitNodeMgmtService and() {
+		return this;
+	}
 	public RabbitNodeMgmtService(){}
-	
+	/**
+	 * constructor
+	 * @param hostname
+	 * @param port
+	 * @param httpClientProvider
+	 */
 	public RabbitNodeMgmtService(String hostname, int port, HttpClientProvider httpClientProvider){
 		this.hostname = hostname;
 		this.port = port;
