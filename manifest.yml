@@ -5,16 +5,3 @@ applications:
   host: RabbitMQEstimator
   domain: 10.244.0.34.xip.io
   path: build/libs/RabbitMQ-0.0.1-SNAPSHOT.jar
-
-  
-   /*   compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-amqp")
-    compile("org.springframework.boot:spring-boot-starter-data-jpa")
-    compile("org.springframework.boot:spring-boot-starter-ws")
-    compile("org.springframework.boot:spring-boot-starter-jdbc")
-    compile("org.springframework.boot:spring-boot-starter-groovy-templates")
-    compile("org.springframework.boot:spring-boot-starter-data-rest")
-    compile("org.springframework.boot:spring-boot-starter-websocket")
-    compile("org.springframework.boot:spring-boot-starter-data-jpa")
-    compile("org.springframework.boot:spring-boot-starter-actuator")
-    compile("org.springframework.data:spring-data-rest-webmvc")
