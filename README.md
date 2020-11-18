@@ -1,4 +1,4 @@
-# RabbitMQEstimator
+<h1> VMware has ended active development of this project, this repository will no longer be updated.</h1><br># RabbitMQEstimator
 RabbitMQEstimator - RabbitMQ configuration management database, provisioner, and heuristic analysis of traffic.<br />
 <br />
 This project is a result of many discussions around the use and provisioning of RabbitMQ which has become pervasive in the past year. &nbsp;The issue is that when you initially setup RabbitMQ and expose it to the different needs of the business it typically will fail. &nbsp;As the use increases, the setup out of the box does not suffice. &nbsp;This is where the RabbitMQEstimator comes into play. &nbsp;The plan is for it to be a small clustered application that will work in a Pivotal Cloud Foundry, Docker compose or bare metal environment. &nbsp;Eventually the work can be done to enable Puppet, Chef, and Ansible.<br />
